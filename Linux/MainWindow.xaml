@@ -1,0 +1,86 @@
+﻿<Window x:Name="Window" x:Class="Linux.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Linux"
+        mc:Ignorable="d"
+        Title="Безымянный" Height="450" Width="800" Closing="Window_Closing" Icon="icons8-блокнот-32.png" Loaded="Window_Loaded_1">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="207*"/>
+        </Grid.RowDefinitions>
+        <Menu VerticalAlignment="Top" Height="20" Grid.RowSpan="2">
+            <MenuItem Header="Файл">
+                <MenuItem x:Name="CreateS" Header="Создать" Click="CreateS_Click"></MenuItem>
+                <MenuItem x:Name="NewWindow" Header="Новое окно" Click="NewWindow_Click"></MenuItem>
+                <MenuItem x:Name="Open" Header="Открыть..." Click="Open_Click"></MenuItem>
+                <MenuItem x:Name="Save" Header="Сохранить" Click="Save_Click"></MenuItem>
+                <MenuItem x:Name="ASSAve" Header="Сохранить как..." Click="ASSAve_Click"></MenuItem>
+                
+                <MenuItem x:Name="EXTS" Header="Выход" Click="EXTS_Click"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Правка">
+                <MenuItem x:Name="Cancel" Header="Отменить" Click="Cancel_Click"></MenuItem>
+                <MenuItem x:Name="NextPose" Header="Следующая позиция" Click="NextPose_Click"></MenuItem>
+                <Separator></Separator>
+                <MenuItem x:Name="Cut" Header="Вырезать" Click="Cut_Click"/>
+                <MenuItem x:Name="copy" Header="Копировать" Click="copy_Click"></MenuItem>
+                <MenuItem x:Name="Paste" Header="Вставить" Click="Paste_Click"></MenuItem>
+                <MenuItem x:Name="remove" Header="Удалить" Click="remove_Click"></MenuItem>
+                
+                <MenuItem x:Name="AllSelect" Header="Выделить всё" Click="AllSelect_Click"></MenuItem>
+                <MenuItem x:Name="Time" Header="Время и дата" Click="Time_Click"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Формат">
+
+                <MenuItem x:Name="Atile" Header="Шрифт" >
+                    <MenuItem x:Name="Fat"   Header="Жирный" Click="Fat_Click">
+                        
+                    </MenuItem>
+                    
+                <MenuItem x:Name="Italic" Header="Курсив" Click="Italic_Click">
+                        
+                    </MenuItem>
+                    
+                    <MenuItem x:Name="UnderLine" Header="Подчеркнутый"  Click="UnderLine_Click">
+                        
+                    </MenuItem>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Вид">
+                <MenuItem x:Name="DeleteLine" Header="Удалить текущую строку" Click="DeleteLine_Click"></MenuItem>
+                <MenuItem x:Name="StatusBars" Header="Строка состояния" Click="StatusBars_Click"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Справка">
+                <MenuItem x:Name="About" Header="Просмотреть справку" Click="About_Click"></MenuItem>
+                
+                <Separator></Separator>
+                <MenuItem x:Name="Info" Header="О программе" Click="Info_Click"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <TextBox VerticalAlignment="Stretch" Margin="0,20,0,29" Grid.RowSpan="2"/>
+        <StatusBar x:Name="Status" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Grid.Row="1" Height="22" Background="#FFECECEC">
+            <TextBlock x:Name="time" Text="0:0" ToolTip="Текущее время"></TextBlock>
+            <Separator></Separator>
+            <TextBlock x:Name="data" Text="0.0.0" ToolTip="Текущая дата"></TextBlock>
+            <Separator></Separator>
+            <TextBlock x:Name="Form" Text="UTF-8" HorizontalAlignment="Right"></TextBlock>
+            
+        </StatusBar>
+
+
+
+        <RichTextBox x:Name="Rich1"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  VerticalScrollBarVisibility="Visible"  HorizontalScrollBarVisibility="Visible" Margin="0,18,0,22" Grid.RowSpan="2" TextChanged="Rich1_TextChanged">
+            <RichTextBox.Resources>
+                <Style TargetType="Paragraph">
+                    <Setter Property="Margin" Value="0" />
+                </Style>
+            </RichTextBox.Resources>
+        </RichTextBox>
+
+
+
+    </Grid>
+</Window>
